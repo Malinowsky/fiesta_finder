@@ -1,10 +1,15 @@
 
-import 'package:fiesta_finder/pages/starterPage.dart';
+import 'package:fiesta_finder/app/services/auth_service.dart';
+import 'package:fiesta_finder/ui/authentication/login_page.dart';
+import 'package:fiesta_finder/ui/authentication/sign_up.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'colorSelect.dart';
-import 'pages/homePage.dart';
+import 'color_select.dart';
+import 'ui/home_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -17,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(backgroundColor: ColorSelect.white),
-      home: const HomePage(),
+      home: AuthService().handleAuthState(),
     );
   }
 

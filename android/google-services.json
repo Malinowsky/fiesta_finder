@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "954905463798",
+    "project_id": "find-fiesta",
+    "storage_bucket": "find-fiesta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954905463798:android:f2f17faba3f03a1af915d7",
+        "android_client_info": {
+          "package_name": "com.malinowski.fiesta_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954905463798-na92101ti242ng2786m01r83b2ff1rvl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdQlb5JaNGkSnESKsK_i7_T6j-_Hh-irg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954905463798-na92101ti242ng2786m01r83b2ff1rvl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

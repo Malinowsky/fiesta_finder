@@ -1,4 +1,4 @@
-import 'package:fiesta_finder/screenSelect.dart';
+import 'package:fiesta_finder/screen_select.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends ElevatedButton {
