@@ -5,22 +5,32 @@ class CustomButton extends ElevatedButton {
   CustomButton({
     required VoidCallback onPressed,
     required String text,
+    required Color colorBack,
+    required Color colorFore,
   }) : super(
     onPressed: onPressed,
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
       elevation: MaterialStateProperty.all<double>(0),
-      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+      backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
     ),
     child: Container(
+      height: 45,
+      width: 280,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.black,width: 1),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white,width: 1.5),
+        color: colorBack,
       ),
-      child: Padding(
-      padding: EdgeInsets.only(top: ScreenSelect.height15,bottom: ScreenSelect.height15,left: ScreenSelect.width60,right: ScreenSelect.width60),
-      child: Text(text,style: const TextStyle(fontFamily: 'Helvetica',fontSize: 16)),
-      )
+      child: Center(
+        child: Text(
+          text,
+          style:  TextStyle(
+            fontFamily: "Helvetica",
+            fontSize: 16,
+            color: colorFore,
+          ),
+        ),
+      ),
     ),
   );
 }
