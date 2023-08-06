@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../app/services/auth_service.dart';
 
 class SecondHome extends StatefulWidget {
+  const SecondHome({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }

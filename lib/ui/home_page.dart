@@ -1,5 +1,6 @@
 import 'package:fiesta_finder/responsive_helper.dart';
 import 'package:fiesta_finder/screen_select.dart';
+import 'package:fiesta_finder/ui/authentication/sign_up.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       CustomButton(onPressed: () => {}, text: "SIGN IN", colorBack: Colors.transparent, colorFore: Colors.white,),
                       SizedBox(height: ScreenSelect.height20),
-                      CustomButton(onPressed: () => {}, text: "SIGN UP", colorBack: Colors.white, colorFore: Colors.black87,),
+                      CustomButton(onPressed: () => _navigateToNextScreen(context, SignUp()), text: "SIGN UP", colorBack: Colors.white, colorFore: Colors.black87,),
                       SizedBox(height: ScreenSelect.height20),
                       buildText("Trouble logging in?"),
                       SizedBox(height: ScreenSelect.height30),
@@ -154,5 +155,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void _navigateToNextScreen(BuildContext context, nameClass) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => nameClass));
+  }
 
 }

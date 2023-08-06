@@ -18,19 +18,24 @@ class CustomButton extends ElevatedButton {
       width: 280,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white,width: 1.5),
+        border: Border.all(color: Colors.white, width: 1.5),
         color: colorBack,
       ),
-      child: Center(
-        child: Text(
-          text,
-          style:  TextStyle(
-            fontFamily: "Helvetica",
-            fontSize: 16,
-            color: colorFore,
+      child: Row( // Dodano Row
+        mainAxisAlignment: MainAxisAlignment.center, // Wyśrodkowanie zawartości
+        children: [
+          Text(
+            text,
+            style: TextStyle(
+              fontFamily: "Helvetica",
+              fontSize: 16,
+              color: colorFore,
+            ),
+            textAlign: TextAlign.center,
           ),
-        ),
+        ],
       ),
     ),
   );
 }
+

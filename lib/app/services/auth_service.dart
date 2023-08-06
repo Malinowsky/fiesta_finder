@@ -14,29 +14,43 @@ class AuthService {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (BuildContext context, snapshot) {
           if(snapshot.hasData){
-            return SignUp();
+            return SecondHome();
           }else{
-            return const LoginPage();
+            return const HomePage();
           }
         });
   }
 
   signInWithGoogle() async {
-    // Trigger the authentication flow
-    final GoogleSignInAccount? googleUser = await GoogleSignIn(
-        scopes: <String>["email"]).signIn();
+    GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+    GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
 
-    // Create a new credential
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
+    AuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
     );
 
-    // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+    UserCredential userCredential =await FirebaseAuth.instance.signInWithCredential(credential);
+
+    print(userCredential.user?.displayName);
+
+
+    // // Trigger the authentication flow
+    // final GoogleSignInAccount? googleUser = await GoogleSignIn(
+    //     scopes: <String>["email"]).signIn();
+    //
+    // // Obtain the auth details from the request
+    // final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+    //
+    // // Create a new credential
+    // final credential = GoogleAuthProvider.credential(
+    //   accessToken: googleAuth.accessToken,
+    //   idToken: googleAuth.idToken,
+    // );
+    //
+    // // Once signed in, return the UserCredential
+    // return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
   signOut() {

@@ -2,7 +2,11 @@
 class Assets {
   Assets._();
 
+  static const String assetsApple = 'assets/apple.png';
+  static const String assetsApplev2 = 'assets/applev2.png';
   static const String assetsFiesta = 'assets/fiesta.jpg';
+  static const String assetsFiestav2 = 'assets/fiestav2.png';
+  static const String assetsGoogle = 'assets/google.png';
   static const String assetsPngegg = 'assets/pngegg.png';
 
 }
