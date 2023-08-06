@@ -1,6 +1,6 @@
 
 import 'package:fiesta_finder/app/services/auth_service.dart';
-import 'package:fiesta_finder/ui/authentication/login_page.dart';
+
 import 'package:fiesta_finder/ui/authentication/sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

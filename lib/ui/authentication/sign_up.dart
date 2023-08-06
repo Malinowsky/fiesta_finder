@@ -1,4 +1,6 @@
 import 'package:fiesta_finder/responsive_helper.dart';
+import 'package:fiesta_finder/ui/advertising_pages.dart';
+import 'package:fiesta_finder/ui/questions/gender_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -7,7 +9,6 @@ import '../../app/services/auth_service.dart';
 import '../../custom_button.dart';
 import '../../custom_textfield.dart';
 import '../../screen_select.dart';
-import 'login_page.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -161,7 +162,7 @@ class _SignUp extends State<SignUp> {
 
     if (userCredential.user != null) {
       Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => LoginPage()));
+          MaterialPageRoute(builder: (context) => GenderPage()));
     }
   }
 }
